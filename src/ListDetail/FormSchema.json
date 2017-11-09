@@ -1,0 +1,8 @@
+{
+    "title": "Medicatie",
+    "type": "object",
+    "required": ["foto"],
+    "properties": {
+        "foto": { "type": "string", "format": "data-url", "title": "Single Foto" }
+    }
+}

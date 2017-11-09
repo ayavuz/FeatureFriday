@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import List from './list';
-import Detail from './detail';
+import DetailContainer from './detailcontainer';
+import Notificatie from './notificatie';
+import './index.css';
 
 export default class ListDetail extends Component {
     constructor(props) {
@@ -29,11 +31,12 @@ export default class ListDetail extends Component {
         const isDetail = this.state.currentClient.Naam !== undefined;
         return (
             <div id="App">
+                <Notificatie start={Date.now()}/>
                 {isDetail ? (
-                    <Detail currentClient={this.state.currentClient} closeDetailClick={this.handleCloseDetailClick} />
+                    <DetailContainer currentClient={this.state.currentClient} closeDetailClick={this.handleCloseDetailClick} />
                 ) : (
                     <List clienten={this.state.clienten} onClientClick={this.handleListClick} />
-                )}
+                    )}
             </div>
         );
     }
