@@ -1,32 +1,46 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import 'whatwg-fetch'
 import './notificatie.css';
 
 export default class Notificatie extends Component {
 
     constructor(props) {
         super(props);     
-        this.tick = this.tick.bind(this);
+        this.getNotification = this.getNotification.bind(this);
+        this.emptyNotification = this.emptyNotification.bind(this);
 
-        this.state = { elapsed: 0 };   
+        this.state = { elapsed: 0, notificatie: {}, hideNotification: false };   
     }    
         
     componentDidMount() { 
-        this.timer = setInterval(this.tick, 50);
+        this.timer = setInterval(this.getNotification, 3600);
     }
         
     componentWillUnmount() {  
         clearInterval(this.timer);
     }
+
+    emptyNotification() {
+        this.setState({ hideNotification: true} );
+    }
         
-    tick() {
-        this.setState({ elapsed: new Date() - this.props.start });
+    getNotification() {
+        fetch('mockNotificatie.json', {cache: "no-cache"})
+        .then(response => response.json())     
+        .then(json => { 
+            if (json !== this.state.notificatie) {
+                this.setState({ notificatie: json })
+            }
+        })
+        .catch(ex => { console.log('parsing failed', ex) });        
     }
         
     render() {
-        var elapsed = Math.round(this.state.elapsed / 100);        
-        var seconds = (elapsed / 10).toFixed(1); 
-
-        return<p>This example was started < b > { seconds } seconds</b> ago.</p>;
+        if (this.state.notificatie.title !== undefined && !this.state.hideNotification ) {
+            return <div onClick={this.emptyNotification}  ><div className="NotificatiePopup">{ this.state.notificatie.title }</div></div>;
+        }     
+        
+        return null;
     }
 }

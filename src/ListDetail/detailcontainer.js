@@ -13,11 +13,19 @@ export default class DetailContainer extends Component {
     this.props.closeDetailClick();
   }
 
-  detailOnSubmit(e) {   
-      //fetch(nextProps.slide.url)
-      //.then(response => response.json())            
-      //.then(json => { this.setState({ slide: json })})
-      //.catch(ex => { console.log('parsing failed', nextProps.slide.url, ex) });     
+  detailOnSubmit(e) { 
+      console.log("detailOnSubmit", e)  
+      fetch("mockNotificatie.json", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+          },
+        body: e.formData
+      })
+      .then(response => response.json())            
+      .then(json => { console.log('post succeeded', json) })
+      .catch(ex => { console.log('post failed', ex) });     
   }
 
   render() {
