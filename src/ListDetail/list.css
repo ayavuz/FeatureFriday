@@ -1,0 +1,26 @@
+.ClientenLijst
+{
+    border-top:1px solid gray;
+}
+
+.ClientenLijstItem
+{
+    border-bottom:1px solid gray;
+}
+
+.ClientenLijstItem h3
+{
+    display:inline-block;
+}
+
+.ClientNaam
+{
+    margin-left:5%;
+    width:45%;
+}
+
+.ZorgMomentTijd
+{
+    margin-left:3%;
+}
+

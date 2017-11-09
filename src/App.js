@@ -25,7 +25,9 @@ class App extends Component {
           <img className="EcareLogo" src="https://jira.ecare.nl/s/y1oiat/74005/bcf70227c0f52b77608ee677299f3306/_/jira-logo-scaled.png"/>
         </header>
         <ListDetail clienten={this.state.clienten} />
-        <img className="Vormen" src={vormen} />
+        <div className="footerVormen">
+          <img className="Vormen" src={vormen} />
+        </div>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  
 }
 
 .App-logo {
@@ -12,6 +12,7 @@
   height: 50px;
   color: white;
   box-shadow: 0px 1px 0px gray;
+  text-align: center;
 }
 
 .EcareLogo
@@ -23,6 +24,14 @@
 .Vormen
 {
   width:300px;
+}
+
+.footerVormen
+{
+  width:100%;
+  position:fixed;
+  bottom: 20px;
+  text-align:center;
 }
 
 .App-title {

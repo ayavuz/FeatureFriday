@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from './list';
+import ClientList from './list';
 import DetailContainer from './detailcontainer';
 import Notificatie from './notificatie';
 import './index.css';
@@ -35,7 +35,7 @@ export default class ListDetail extends Component {
                 {isDetail ? (
                     <DetailContainer currentClient={this.state.currentClient} closeDetailClick={this.handleCloseDetailClick} />
                 ) : (
-                    <List clienten={this.state.clienten} onClientClick={this.handleListClick} />
+                    <ClientList clienten={this.state.clienten} onClientClick={this.handleListClick} />
                     )}
             </div>
         );
