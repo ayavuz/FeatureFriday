@@ -1,6 +1,6 @@
 {
-  "name": "puur.mijndag",
-  "homepage": "https://boudewijnvanveen.github.io/FeatureFriday/",
+  "name": "PuurMakeMyDay",
+  "homepage": "https://boudewijnvanveen.github.io/FeatureFriday",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
