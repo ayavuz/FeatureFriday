@@ -6,21 +6,22 @@ import './detail.css';
 
 export default class Detail extends Component {
     constructor(props) {
-        super(props); 
-    }     
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
 
-    render() {       
-        
-        const log = (type) => console.log.bind(console, type);
+    onSubmit(formData) {
+        this.props.onSubmit(formData);
+    }
 
-        const onSubmit = ({formData}) => console.log({formData});
-
+    render() {
+        const log = (type) => console.log.bind(console, type); 
         return (
             <div>
                 <h3>Client {this.props.currentClient.Naam}</h3>
                 <button onClick={this.props.closeDetailClick}>Terug</button>
-                <Form schema={FormSchema}  onChange={log("changed")}  onSubmit={log("submitted")} onError={log("errors")} />
-            </div>            
+                <Form schema={FormSchema} onSubmit={this.onSubmit} onError={log("errors")} />
+            </div>
         );
     }
 }
