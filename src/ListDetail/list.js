@@ -1,23 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import './list.css';
 
 class List extends Component {
 
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-
-        this.state = {
-            clienten: []
-        };
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps !== this.props) {
-            this.setState({
-                clienten: nextProps.clienten
-            });
-        }
     }
 
     handleClick(e) {
@@ -27,7 +16,7 @@ class List extends Component {
     render() {
         return (
             <div className='ClientenLijst'>
-                {this.state.clienten.map((client) => {
+                {this.props.clienten.map((client) => {
                     return (
                         <h3 key={client.key} onClick={() => this.handleClick({ client })}>
                             {client.Naam}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './list';
 import Detail from './detail';
+import './index.css';
 
 export default class ListDetail extends Component {
     constructor(props) {

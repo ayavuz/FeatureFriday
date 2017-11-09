@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import Form from "react-jsonschema-form";
+import FormSchema from "./FormSchema.json";
 import './detail.css';
 
 export default class Detail extends Component {
@@ -8,15 +9,7 @@ export default class Detail extends Component {
         super(props); 
     }     
 
-    render() {
-        const schema = {
-            title: "Medicatie",
-            type: "object",
-            required: ["foto"],
-            properties: {
-                "foto": { "type": "string", "format": "data-url", "title": "Single Foto" }
-            }
-        };
+    render() {       
         
         const log = (type) => console.log.bind(console, type);
 
@@ -26,7 +19,7 @@ export default class Detail extends Component {
             <div>
                 <h3>Client {this.props.currentClient.Naam}</h3>
                 <button onClick={this.props.closeDetailClick}>Terug</button>
-                <Form schema={schema}  onChange={log("changed")}  onSubmit={log("submitted")} onError={log("errors")} />
+                <Form schema={FormSchema}  onChange={log("changed")}  onSubmit={log("submitted")} onError={log("errors")} />
             </div>            
         );
     }
