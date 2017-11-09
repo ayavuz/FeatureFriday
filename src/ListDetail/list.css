@@ -1,6 +1,8 @@
 .ClientenLijst
 {
     border-top:1px solid gray;
+    overflow-y:scroll;
+    height:500px;
 }
 
 .ClientenLijstItem
@@ -24,3 +26,13 @@
     margin-left:3%;
 }
 
+.fa-arrow-right
+{
+    color:rgb(108,0,70);
+    margin-left:25%;
+}
+
+.HuidigeDatum
+{
+    text-align:center;
+}

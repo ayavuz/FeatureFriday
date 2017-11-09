@@ -10,12 +10,12 @@ export default class ListDetail extends Component {
         this.handleListClick = this.handleListClick.bind(this);
         this.handleCloseDetailClick = this.handleCloseDetailClick.bind(this);
 
-        this.state = { clienten: [], currentClient: {} };
+        this.state = { clienten: [], currentClient: {} ,datum:""};
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps !== this.props) {
-            this.setState({ clienten: nextProps.clienten });
+            this.setState({ clienten: nextProps.clienten,datum: nextProps.datum });
         }
     }
 
@@ -31,11 +31,11 @@ export default class ListDetail extends Component {
         const isDetail = this.state.currentClient.Naam !== undefined;
         return (
             <div id="App">
-                <Notificatie start={Date.now()}/>
+            <Notificatie start={Date.now()}/>
                 {isDetail ? (
                     <DetailContainer currentClient={this.state.currentClient} closeDetailClick={this.handleCloseDetailClick} />
                 ) : (
-                    <ClientList clienten={this.state.clienten} onClientClick={this.handleListClick} />
+                    <ClientList clienten={this.state.clienten} datum={this.state.datum} onClientClick={this.handleListClick} />
                     )}
             </div>
         );
