@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import vormen from './images/vormen.jpg';
 import './App.css';
 import ListDetail from './ListDetail/index';
 import Clienten from './data.json';
@@ -22,10 +22,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img className="EcareLogo" src="https://jira.ecare.nl/s/y1oiat/74005/bcf70227c0f52b77608ee677299f3306/_/jira-logo-scaled.png"/>
         </header>
         <ListDetail clienten={this.state.clienten} />
+        <img className="Vormen" src={vormen} />
       </div>
     );
   }
