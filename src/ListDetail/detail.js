@@ -18,8 +18,9 @@ export default class Detail extends Component {
         const log = (type) => console.log.bind(console, type); 
         return (
             <div>
+                <br/>
+                <i className="fa fa-arrow-left" onClick={this.props.closeDetailClick} aria-hidden="true"></i>
                 <h3>Client {this.props.currentClient.Naam}</h3>
-                <button onClick={this.props.closeDetailClick}>Terug</button>
                 <Form schema={FormSchema} onSubmit={this.onSubmit} onError={log("errors")} />
             </div>
         );
