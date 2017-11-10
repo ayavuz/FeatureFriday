@@ -25,6 +25,7 @@ class App extends Component {
           <img className="EcareLogo" src="https://jira.ecare.nl/s/y1oiat/74005/bcf70227c0f52b77608ee677299f3306/_/jira-logo-scaled.png"/>
         </header>
         <ListDetail clienten={this.state.clienten.clienten} datum={this.state.clienten.datum} />
+      <a href="http://run.mockplus.com/7dVp6svFAoua7FvzszRy/index.html">Terug</a>
         <div className="footerVormen">
           <img className="Vormen" src={vormen} />
         </div>
